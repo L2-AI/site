@@ -1,24 +1,47 @@
 <html>
 <head>
-<style>
-  .container {
-     font-family: 'Courier New', Courier, monospace;
-     text-align: center;
-     padding: 20px;
-  }
-  .logo {
-     display: block;
-     margin: 0 auto 20px auto;
-     width: 200px;
-  }
-</style>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .container {
+      font-family: 'Courier New', Courier, monospace;
+      text-align: center;
+      padding-top: 80px;
+      padding: 20px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px auto;
+      width: 60%;
+      max-width: 200px;
+      height: auto;
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        padding-top: 40px;
+        padding: 15px;
+      }
+
+      .logo {
+        width: 60%;
+      }
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-        <img src="logo.svg" alt="L2 Labs Logo" class="logo">
-        <p>We build AI data mapping solutions.</p>
-        <p>L2 Labs, Inc.</p>
-        <p>andrew@l2labs.ai</p>
+    <img src="logo.svg" alt="L2 Labs Logo" class="logo">
+    <p>We build AI data mapping solutions.</p>
+    <p>L2 Labs, Inc.</p>
+    <p>andrew@l2labs.ai</p>
   </div>
 </body>
 </html>
