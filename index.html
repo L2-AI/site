@@ -1,47 +1,181 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>L2 Labs</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Fonts link -->
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Urbanist:wght@400;600;800&display=swap" rel="stylesheet">
+  
+  <!-- Place this tag in your head or just before your close body tag. -->
+  <script async defer src="https://buttons.github.io/buttons.js"></script>
+
   <style>
-    body {
+    html, body {
       margin: 0;
       padding: 0;
+      height: 100%;
+      overflow: hidden;
+      font-family: 'Inter', sans-serif;
+      color: #353b48;
+      background-color: #fff;
+    }
+
+    body {
+      /*background: url('artwork-7141090_1920.png') no-repeat center center fixed;
+      background-size: cover;
+      position: relative;*/
+    }
+
+    .header {
+      position: absolute;
+      top: 0px;
+      left: 0;
+      right: 0;
+      z-index: 2;
+      display: flex;
+      justify-content: center;
+      /*background-color: rgba(255, 255, 255, 0.7);*/
+      padding: 1rem;
+      border-bottom: 1px solid #e8e9ee;
+    }
+
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(255, 255, 255, 0.0);
+      z-index: 1;
+    }
+
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 500px;
+    }
+
+    .title-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 2.2rem;
+      font-kerning: none;
+    }
+
+    .demo-text {
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 500;
+      font-size: 1rem;
+      font-kerning: none;
     }
 
     .container {
-      font-family: 'Courier New', Courier, monospace;
+      position: absolute;
+      top: 50%; /* moved up from 50% */
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 2;
       text-align: center;
-      padding-top: 80px;
-      padding: 20px;
-      max-width: 800px;
-      margin: 0 auto;
     }
 
-    .logo {
-      display: block;
-      margin: 0 auto 20px auto;
-      width: 60%;
-      max-width: 200px;
-      height: auto;
+    .subtitle {
+      font-family: Helvetica, Arial, sans-serif;
+      font-size: 2.2rem;
+      color: #353b48;
+      font-weight: 100;
+      margin-bottom: 5rem;
     }
+
+    /*  FORM */
+    #newsletter-form {
+        padding: 5px;
+        
+        display: flex;
+        flex-direction: row;
+
+        width: 330px !important;
+        height: 3.5rem !important;
+
+        margin: auto;
+    }
+
+    #newsletter-form input,
+    #newsletter-form button {
+      border-radius: 10px;
+
+      font-family: Arial, sans-serif;
+      font-weight: 400;
+
+      background-color: transparent;
+      border: 1px solid #e8e9ee;
+
+      padding: 10px;
+    }
+        #newsletter-form input:focus,
+        #newsletter-form button:focus {
+            outline-color: transparent;
+            outline-style: none;
+        }
+
+    #newsletter-form input {
+        flex-grow: 1;
+        border-right-width: 0;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+
+        font-family: Andale Mono,AndaleMono,monospace; 
+        letter-spacing: -0.5px;
+        font-weight: 400;
+        font-size: 0.9rem;
+        color: #353b48;
+    }
+
+    #newsletter-form button {
+        width: 45px;
+        color: #353b48;
+        font-size: 20px;
+        /*color: white;*/
+        background-color: transparent !important;
+
+        border-left-width: 0;
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+        #newsletter-form button:hover {
+            cursor: pointer;
+        }
 
     @media (max-width: 600px) {
-      .container {
-        padding-top: 40px;
-        padding: 15px;
-      }
-
-      .logo {
-        width: 60%;
-      }
+      .logo-title { gap: 200px !important; }
+      .title-text { font-size: 1.8rem; }
+      .subtitle { font-size: 1.8rem }
+      .container {  top: 40%; }
     }
+
   </style>
 </head>
 <body>
+  <div class="overlay"></div>
+
+  <div class="header">
+    <div class="logo-title">
+      <div class="title-text">l2</div>
+      <a class="github-button" href="https://github.com/L2-AI" data-color-scheme="no-preference: dark; light: dark; dark: dark;" data-size="large" aria-label="Follow @L2-AI on GitHub">@L2-AI</a>
+    </div>
+  </div>
+
   <div class="container">
-    <img src="logo.svg" alt="L2 Labs Logo" class="logo">
-    <p>We build AI data mapping solutions.</p>
-    <p>L2 Labs, Inc.</p>
-    <p>andrew@l2labs.ai</p>
+    <div class="subtitle">Building solutions for AI data mapping and information reliability.</div>
+
+    <form id="newsletter-form" action="https://docs.google.com/forms/d/e/1FAIpQLSex5nwjQ00fsV1f4hiZDLJf69KR-QzbdZePbIGD4eI5WZ5Icw/formResponse">
+      <input type="text" class="form-input-text" placeholder="Enter your e-mail for a demo" name="entry.1790614134"></input>
+      <button type="submit">&#10095;</button>
+  </form>
+
   </div>
 </body>
 </html>
